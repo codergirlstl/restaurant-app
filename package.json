@@ -1,0 +1,29 @@
+{
+  "name": "restaurant-app",
+  "version": "1.0.0",
+  "description": "--- #### _Three Stage Course Material Project - Restaurant Reviews_",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udacity/mws-restaurant-stage-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udacity/mws-restaurant-stage-1/issues"
+  },
+  "homepage": "https://github.com/udacity/mws-restaurant-stage-1#readme",
+  "dependencies": {
+    "del": "^3.0.0",
+    "globby": "^8.0.1",
+    "sharp": "^0.20.8"
+  },
+  "devDependencies": {
+    "gulp-responsive": "^2.11.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}
