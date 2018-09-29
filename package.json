@@ -20,9 +20,11 @@
   "dependencies": {
     "del": "^3.0.0",
     "globby": "^8.0.1",
+    "gulp-sass": "^4.0.1",
     "sharp": "^0.20.8"
   },
   "devDependencies": {
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-responsive": "^2.11.0",
     "gulp-uglify": "^3.0.1"
   }
