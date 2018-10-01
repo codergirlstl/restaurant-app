@@ -14,7 +14,7 @@ class DBHelper {
   }
 
   /**
-   * Fetch all restaurants.
+   * Fetch all restaurants. Code from Doug Brown's MWS Websinar 2
    */
   static fetchRestaurants(callback) {
     let fetchURL;
@@ -24,24 +24,12 @@ class DBHelper {
      fetchURL = DBHelper.DATABASE_URL + "/" + id;
    }
    fetch(fetchURL, {method: "GET"}).then(response => {
-     response
-       .json()
-       .then(restaurants => {
-         if (restaurants.length) {
-           // Get all neighborhoods from all restaurants
-           const neighborhoods = restaurants.map((v, i) => restaurants[i].neighborhood);
-           // Remove duplicates from neighborhoods
-           fetchedNeighborhoods = neighborhoods.filter((v, i) => neighborhoods.indexOf(v) == i);
-
-           // Get all cuisines from all restaurants
-           const cuisines = restaurants.map((v, i) => restaurants[i].cuisine_type);
-           // Remove duplicates from cuisines
-           fetchedCuisines = cuisines.filter((v, i) => cuisines.indexOf(v) == i);
-         }
-
+     response.json().then(restaurants => {
+        console.log("restaurants JSON: ", restaurants);
          callback(null, restaurants);
        });
-   }).catch(error => {
+   })
+   .catch(error => {
      callback(`Request failed. Returned ${error}`, null);
    });
 
