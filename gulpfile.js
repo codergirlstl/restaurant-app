@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const browserify = require('gulp-browserify');
 const browserSync = require('browser-sync').create();
 
 gulp.task("default", ["styles"], function() {

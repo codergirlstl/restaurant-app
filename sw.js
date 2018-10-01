@@ -1,3 +1,6 @@
+//Import indexdb database
+//import idb from "idb";
+
 var CACHE_NAME = 'restaurant-app-cache-v1';
 var urlsToCache = [
   '/',
