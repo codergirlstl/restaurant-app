@@ -4,6 +4,7 @@
 
 class DBHelper {
 
+
   /**
    * Database URL.
    * Change this to restaurants.json file location on your server.
@@ -17,12 +18,7 @@ class DBHelper {
    * Fetch all restaurants. Code from Doug Brown's MWS Websinar 2
    */
   static fetchRestaurants(callback) {
-    let fetchURL;
-   if (!id) {
-     fetchURL = DBHelper.DATABASE_URL;
-   } else {
-     fetchURL = DBHelper.DATABASE_URL + "/" + id;
-   }
+    let fetchURL = DBHelper.DATABASE_URL;
    fetch(fetchURL, {method: "GET"}).then(response => {
      response.json().then(restaurants => {
         console.log("restaurants JSON: ", restaurants);
@@ -32,7 +28,7 @@ class DBHelper {
    .catch(error => {
      callback(`Request failed. Returned ${error}`, null);
    });
-
+}
 
   /**
    * Fetch a restaurant by its ID.
