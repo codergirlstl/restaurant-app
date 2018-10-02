@@ -313,7 +313,7 @@
   else {
     self.idb = exp;
   }
-}());
+}()); /*
 © 2018 GitHub, Inc.
 Terms
 Privacy
@@ -325,4 +325,4 @@ Pricing
 API
 Training
 Blog
-About
+About */

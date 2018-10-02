@@ -13,6 +13,11 @@ class DBHelper {
     const port = 1337; // Change this to your server port
     return `http://localhost:${port}/restaurants`;
   }
+//Change to see the reviews
+/*static get DATABASE_URL() {
+  const port = 1337; // Change this to your server port
+  return `http://localhost:${port}/reviews`;
+}
 
   /**
    * Fetch all restaurants. Code from Doug Brown's MWS Websinar 2
@@ -29,6 +34,20 @@ class DBHelper {
      callback(`Request failed. Returned ${error}`, null);
    });
 }
+
+/*Fetch all reviews.
+static fetchReviews(callback) {
+  let fetchURL = DBHelper.DATABASE_URL;
+ fetch(fetchURL, {method: "GET"}).then(response => {
+   response.json().then(reviews => {
+      console.log("reviews JSON: ", reviews);
+       callback(null, reviews);
+     });
+ })
+ .catch(error => {
+   callback(`Request failed. Returned ${error}`, null);
+ });
+} */
 
   /**
    * Fetch a restaurant by its ID.
