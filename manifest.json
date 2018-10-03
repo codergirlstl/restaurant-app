@@ -9,11 +9,6 @@
 
 "theme_color": "#002266",
 
-"display": "standalone",
+"display": "standalone"
 
-"icons": [
-  {"48": "/icon.png"},
-  {"96": "/icon.png"},
-  {"192": "/icon.png"}
-]
 }
