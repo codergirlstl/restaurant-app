@@ -20,3 +20,5 @@ dbPromise.then(function(db){
   return tx.complete;
   console.log("Added foobar to keyval");
 });
+
+**/
