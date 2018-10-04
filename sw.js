@@ -7,7 +7,7 @@ var urlsToCache = [
   'manifest.json',
   //'restaurant.html',
   'css/styles.css',
-  'data/restaurants.json',
+  //'data/restaurants.json',
   'js/dbhelper.js',
   'js/register.js',
   'js/main.js',

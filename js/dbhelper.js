@@ -13,11 +13,11 @@ class DBHelper {
     const port = 1337; // Change this to your server port
     return `http://localhost:${port}/restaurants`;
   }
-//Change to see the reviews
-/*static get DATABASE_URL() {
-  const port = 1337; // Change this to your server port
-  return `http://localhost:${port}/reviews`;
-}
+
+//  static get DATABASE_URL() {
+//  const port = 1337; // Change this to your server port
+  //return `http://localhost:${port}/reviews`;
+//}
 
   /**
    * Fetch all restaurants. Code from Doug Brown's MWS Websinar 2
@@ -158,6 +158,21 @@ static fetchReviews(callback) {
       }
     });
   }
+
+//  static fetchRestaurantReviewsById(id, callback) {
+    // Fetch all reviews for the specific restaurant
+  //  const fetchURL = DBHelper.DATABASE_REVIEWS_URL + "/?restaurant_id=" + ;
+    //fetch(fetchURL, {method: "GET"}).then(response => {
+      //if (!response.clone().ok && !response.clone().redirected) {
+        //throw "No reviews available";
+      //}
+      //response
+        //.json()
+        //.then(result => {
+        //  callback(null, result);
+      //  })
+    //}).catch(error => callback(error, null));
+  //}
 
   /**
    * Restaurant page URL.
