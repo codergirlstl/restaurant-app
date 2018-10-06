@@ -14,10 +14,10 @@ class DBHelper {
     return `http://localhost:${port}/restaurants`;
   }
 
-//  static get DATABASE_URL() {
-//  const port = 1337; // Change this to your server port
-  //return `http://localhost:${port}/reviews`;
-//}
+  static get DATABASE_REVIEWS_URL() {
+    const port = 1337; // Change this to your server port
+    return `http://localhost:${port}/reviews`;
+}
 
   /**
    * Fetch all restaurants. Code from Doug Brown's MWS Websinar 2
@@ -34,20 +34,6 @@ class DBHelper {
      callback(`Request failed. Returned ${error}`, null);
    });
 }
-
-/*Fetch all reviews.
-static fetchReviews(callback) {
-  let fetchURL = DBHelper.DATABASE_URL;
- fetch(fetchURL, {method: "GET"}).then(response => {
-   response.json().then(reviews => {
-      console.log("reviews JSON: ", reviews);
-       callback(null, reviews);
-     });
- })
- .catch(error => {
-   callback(`Request failed. Returned ${error}`, null);
- });
-} */
 
   /**
    * Fetch a restaurant by its ID.
@@ -69,6 +55,17 @@ static fetchReviews(callback) {
         }
       }
     }, id);
+  }
+
+  static fetchRestaurantReviewsById(id, callback) {
+    // Fetch all reviews for the specific restaurant
+    let fetchURL = DBHelper.DATABASE_REVIEWS_URL +"/?restaurant_id=";
+    fetch(fetchURL, {method: "GET"}).then(response => {
+        response.json().then(reviews => {
+          console.log("reviews JSON: ", reviews);
+          callback(null, reviews);
+        })
+    }).catch(error => callback(error, null));
   }
   /*
    * Fetch restaurants by a cuisine type with proper error handling.
@@ -159,21 +156,6 @@ static fetchReviews(callback) {
     });
   }
 
-//  static fetchRestaurantReviewsById(id, callback) {
-    // Fetch all reviews for the specific restaurant
-  //  const fetchURL = DBHelper.DATABASE_REVIEWS_URL + "/?restaurant_id=" + ;
-    //fetch(fetchURL, {method: "GET"}).then(response => {
-      //if (!response.clone().ok && !response.clone().redirected) {
-        //throw "No reviews available";
-      //}
-      //response
-        //.json()
-        //.then(result => {
-        //  callback(null, result);
-      //  })
-    //}).catch(error => callback(error, null));
-  //}
-
   /**
    * Restaurant page URL.
    */
@@ -187,6 +169,11 @@ static fetchReviews(callback) {
    static imageUrlForRestaurant(restaurant) {
    return (`/img/${restaurant.photograph}.jpg`);
  }
+
+  //Reviews page URL
+   //static urlforReviews(reviews) {
+  // return (`./restaurant.html?id=${restaurant.id}`);
+  //}
 
   /**
    * Map marker for a restaurant.
